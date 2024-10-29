@@ -10,20 +10,20 @@ export default function SingUp() {
       <form action="" method="post">
         <h2>Singup</h2>
         <div>
-          <label htmlFor="">Username</label>
-          <input type="text" />
+          <label htmlFor="username">Username</label>
+          <input type="text" id="username" />
         </div>
         <div>
-          <label htmlFor="">Email</label>
-          <input type="text" />
+          <label htmlFor="email">Email</label>
+          <input type="email" id="email" />
         </div>
         <div>
-          <label htmlFor="">Password</label>
-          <input type="text" />
+          <label htmlFor="password">Password</label>
+          <input type="password" id="password" />
         </div>
         <div>
-          <label htmlFor="">Phone</label>
-          <input type="text" />
+          <label htmlFor="phone">Phone</label>
+          <input type="text" id="phone" />
         </div>
         <div>
           <input className="submit" type="submit" value="Singup" />
