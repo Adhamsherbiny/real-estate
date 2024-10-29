@@ -22,7 +22,7 @@ export default function Nav() {
           About Us
         </Link>
         {true ? (
-          <Link className="link" href="">
+          <Link className="link" href="/singup">
             Singup
           </Link>
         ) : (
