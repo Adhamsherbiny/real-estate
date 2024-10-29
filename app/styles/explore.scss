@@ -1,0 +1,66 @@
+$logo:royalblue;
+$text-color: black;
+$transitions: 0.2s;
+$primary-color: royalblue;
+$main-color: rgb(44, 0, 75);
+.explore-section{
+    width: 100%;
+    margin-top: 10px;
+    h1{
+        text-align: center;
+        width: 100%;
+        color: royalblue;
+    }
+    .digits{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .shape{
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .first{
+                width: 100px;
+                height: 100px;
+                border-right: 5px solid white;
+                border-left: 5px solid $primary-color ;
+                border-top: 5px solid $primary-color;
+                border-bottom: 5px solid $primary-color;
+                border-radius: 50%;
+                display: flex;
+                padding: 5px;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                color: gray;
+                span{
+                    color: green;
+                }
+            }
+        }
+    }
+    .message-for-insight{
+        font-size: 13px;
+    }
+    .card{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 20px;
+        .card-item{ 
+            width: 300px;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid $primary-color;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 10px;
+            h3{
+                margin: 0;
+                color: $primary-color
+            }
+        }
+}}

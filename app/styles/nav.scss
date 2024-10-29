@@ -1,0 +1,62 @@
+$logo:royalblue;
+$text-color: black;
+$transitions: 0.2s;
+$primary-color: royalblue;
+$main-color: rgb(44, 0, 75);
+.nav{
+    user-select: none;
+    width: 100%;
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    backdrop-filter: blur(10px);
+    background-color: white;
+    z-index: 1000;
+    .logo{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: $logo;
+        width: 220px;
+        padding: 5px 10px;
+        cursor: pointer;
+        .Logo-icon{
+            margin-right: 10px;
+            width: 35px;
+            height: 35px;
+            border-radius: 8px;
+            border: none;
+        }
+
+        h3{
+            margin: 0;
+            font-size: 25px;
+            font-weight: bold;
+        }
+    }
+    .menu{
+        padding: 5px 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        flex-grow: 1;
+
+        @media (max-width: 786px) {
+            width: 320px;
+        }
+        .link{
+            text-decoration: none;
+            color: $text-color;
+            font-size: 18px;
+            transition: $transitions;
+        }
+        .link:hover{
+            color: $primary-color ;
+        }
+    }
+}
