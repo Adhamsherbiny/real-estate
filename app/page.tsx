@@ -1,5 +1,6 @@
 import Explore from "./Explore";
 import FirstSection from "./FirstSection";
+import Footer from "./Footer";
 import Nav from "./Nav";
 import "./styles/homepage.scss";
 
@@ -11,6 +12,7 @@ export default function Home() {
       <div className="container">
         <Explore />
       </div>
+      <Footer />
     </div>
   );
 }
