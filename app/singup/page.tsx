@@ -127,7 +127,7 @@ export default function SingUp() {
         </div>
         <p>{messageFormServer}</p>
       </div>
-      <form action="" method="post" autoComplete="off" autoCorrect="off">
+      <form method="post" autoComplete="off" autoCorrect="off">
         <h2>Singup</h2>
         <div>
           <label htmlFor="username">Username</label>
