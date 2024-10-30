@@ -12,6 +12,40 @@
     align-items: center;
     flex-direction: column;
     color: white;
+    .message{
+        position: absolute;
+        top: -500px;
+        left: 50%;
+        transform: translateX(-50%);
+        border:1px solid black;
+        border-radius: 10px;
+        padding: 4px 2px;
+        width: 290px;
+        background-color: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(5px);
+        z-index: 1000;
+        display: none;
+        .header{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid white;
+            padding: 4px;
+            h4{
+                margin: 0;
+                font-size: 12px;
+            }
+            .close{
+                font-size: 12px;
+                cursor: pointer;
+            }
+        }
+        p{
+            margin: 0;
+            padding: 8px 10px;
+            font-size: 14px;
+        }
+    }
     &::before{
         content: '';
         position: absolute;

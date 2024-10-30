@@ -1,5 +1,7 @@
 "use client";
 import React, { useRef, useState } from "react";
+import gsap from "gsap";
+import axios from "axios";
 import "../styles/SingupAndLogin.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook, faGoogle } from "@fortawesome/free-brands-svg-icons";
@@ -7,6 +9,7 @@ import {
   faEye,
   faEyeSlash,
   faMessage,
+  faX,
 } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
 
@@ -14,10 +17,13 @@ export default function SingUp() {
   const passwordInput = useRef<HTMLInputElement>(null);
   const showPassword = useRef<SVGSVGElement>(null);
   const hidePassword = useRef<SVGSVGElement>(null);
+  const closeMessage = useRef<SVGSVGElement>(null);
+  const messageContainer = useRef<HTMLDivElement>(null);
   const [username, setUsername] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [phone, setPhone] = useState<string>("");
+  const [messageFormServer, setMessageFromServer] = useState("");
   const usernameRegexp = /^[a-zA-Z0-9]{3,15}$/;
   const emailRegexp = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
   const phoneRegexp = /^[0-9]{11}$/;
@@ -68,10 +74,56 @@ export default function SingUp() {
       vaildMsgPassword.current!.style.color = "red";
       vaildMsgPassword.current!.innerHTML = "Password cannot be empty";
     }
+
+    if (
+      usernameRegexp.test(username) &&
+      emailRegexp.test(email) &&
+      phoneRegexp.test(phone) &&
+      password != ""
+    ) {
+      validMsgUsername.current!.style.display = "none";
+      validMsgEmail.current!.style.display = "none";
+      validMsgPhone.current!.style.display = "none";
+      vaildMsgPassword.current!.style.display = "none";
+      axios
+        .post("https://realestate-server-mauve.vercel.app/singup", {
+          username,
+          email,
+          password,
+          phone,
+        })
+        .then((response) => {
+          messageContainer.current!.style.display = "block";
+          setTimeout(() => {
+            if (messageContainer.current!.style.display == "block") {
+              messageContainer.current!.style.display = "none";
+            }
+          }, 3000);
+          setMessageFromServer(response.data.message);
+          gsap.to(messageContainer.current, { y: "50px" });
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
   }
 
   return (
     <div className="singup">
+      <div className="message" ref={messageContainer}>
+        <div className="header">
+          <h4>Real Estate Notifications</h4>
+          <FontAwesomeIcon
+            ref={closeMessage}
+            onClick={() => {
+              messageContainer.current!.style.display = "none";
+            }}
+            className="close"
+            icon={faX}
+          />
+        </div>
+        <p>{messageFormServer}</p>
+      </div>
       <form action="" method="post" autoComplete="off" autoCorrect="off">
         <h2>Singup</h2>
         <div>
