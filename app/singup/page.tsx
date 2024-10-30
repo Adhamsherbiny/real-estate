@@ -86,12 +86,15 @@ export default function SingUp() {
       validMsgPhone.current!.style.display = "none";
       vaildMsgPassword.current!.style.display = "none";
       axios
-        .post("https://realestate-server-mauve.vercel.app/singup", {
-          username,
-          email,
-          password,
-          phone,
-        })
+        .post(
+          "https://realestate-server-ib9xhtafl-adhamsherbinys-projects.vercel.app/singup",
+          {
+            username,
+            email,
+            password,
+            phone,
+          }
+        )
         .then((response) => {
           messageContainer.current!.style.display = "block";
           setTimeout(() => {
