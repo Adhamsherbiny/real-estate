@@ -33,10 +33,13 @@
         div{
             display: flex;
             flex-direction: column;
+            position: relative;
+            margin-bottom: 5px;
             label{
                 font-size: 13px;
             }
             input{
+                position: relative;
                 background-color: #dddddd;
                 padding: 10px;
                 margin: 5px 0;
@@ -44,6 +47,14 @@
                 border: none;
                 outline: none;
                 width: 250px;
+            }
+            p{
+                position:absolute;
+                color: red;
+                font-size: 11px;
+                bottom:-19px;
+                right: 0;
+                display: none;
             }
             .reset-password{
                 color: white;
@@ -63,10 +74,11 @@
                     height: 100%;
                     cursor: pointer;
                     .show, .hide{
+                        position: absolute;
                         width: 20px;
                         color: rgb(167, 167, 167);
                     }
-                    .hide{
+                    .show{
                         display: none;
                     }
                 }

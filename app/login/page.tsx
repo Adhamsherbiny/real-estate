@@ -1,5 +1,4 @@
 "use client";
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useRef } from "react";
 import "../styles/SingupAndLogin.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -12,19 +11,20 @@ import {
 import Link from "next/link";
 
 export default function Login() {
-  const passwordInput = useRef<any>();
-  const showPassword = useRef<any>();
-  const hidePassword = useRef<any>();
+  const passwordInput = useRef<HTMLInputElement>(null);
+  const showPassword = useRef<SVGSVGElement>(null);
+  const hidePassword = useRef<SVGSVGElement>(null);
   function showAndHidePassword() {
     if (passwordInput.current?.type === "password") {
       passwordInput.current.type = "text";
-      if (showPassword == null || undefined) {
+      if (showPassword.current) {
         showPassword.current!.style.display = "block";
+        showPassword.current!.style.color = "royalblue";
         hidePassword.current!.style.display = "none";
       }
     } else {
-      passwordInput.current.type = "password";
-      if (showPassword == null || undefined) {
+      passwordInput.current!.type = "password";
+      if (showPassword.current) {
         showPassword.current!.style.display = "none";
         hidePassword.current!.style.display = "block";
       }
@@ -44,11 +44,13 @@ export default function Login() {
             <input ref={passwordInput} type="password" id="password" />
             <div className="show-hide-pass">
               <FontAwesomeIcon
+                ref={showPassword}
                 onClick={showAndHidePassword}
                 className="show"
                 icon={faEye}
               />
               <FontAwesomeIcon
+                ref={hidePassword}
                 onClick={showAndHidePassword}
                 className="hide"
                 icon={faEyeSlash}
