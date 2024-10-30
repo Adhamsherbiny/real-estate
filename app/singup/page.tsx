@@ -93,7 +93,7 @@ export default function SingUp() {
                 validMsgUsername.current!.style.display = "block";
                 validMsgUsername.current!.style.color = "red";
                 validMsgUsername.current!.innerHTML =
-                  "Please check username is not valid type only character";
+                  "not valid type only character and number";
               }
             }}
           />
