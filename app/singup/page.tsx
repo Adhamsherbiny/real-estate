@@ -87,7 +87,7 @@ export default function SingUp() {
       vaildMsgPassword.current!.style.display = "none";
       axios
         .post(
-          "https://realestate-server-ib9xhtafl-adhamsherbinys-projects.vercel.app/singup",
+          "https://realestate-server-bdu61a0dg-adhamsherbinys-projects.vercel.app/singup",
           {
             username,
             email,
