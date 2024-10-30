@@ -37,13 +37,39 @@
                 font-size: 13px;
             }
             input{
-                background-color: #ddd;
+                background-color: #dddddd;
                 padding: 10px;
                 margin: 5px 0;
                 border-radius: 5px;
                 border: none;
                 outline: none;
                 width: 250px;
+            }
+            .reset-password{
+                color: white;
+                font-size: 10px;
+                margin-top: 10px;
+            }
+            .password{
+                position: relative;
+                .show-hide-pass{
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 40px;
+                    height: 100%;
+                    cursor: pointer;
+                    .show, .hide{
+                        width: 20px;
+                        color: rgb(167, 167, 167);
+                    }
+                    .hide{
+                        display: none;
+                    }
+                }
             }
             .submit{
                 margin-top: 20px;
@@ -52,6 +78,7 @@
                 color: white;
                 font-weight: bold;
                 font-size: 16px;
+                cursor: pointer;
             }
             
         }
@@ -94,6 +121,7 @@
             align-items: center;
             justify-content: center;
             border-radius: 4px;
+            cursor: pointer;
             .icon{
                 color: white;
                 width: 14px;
@@ -110,10 +138,13 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        
         span{
-            color: royalblue;
-            text-decoration: underline;
-            font-weight: bold;
+            .link{
+                font-weight: bold;
+                color: royalblue;
+                text-decoration: none;
+            }
         }
     }
 }

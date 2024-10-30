@@ -11,11 +11,10 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
 
-export default function SingUp() {
+export default function Login() {
   const passwordInput = useRef<any>();
   const showPassword = useRef<any>();
   const hidePassword = useRef<any>();
-
   function showAndHidePassword() {
     if (passwordInput.current?.type === "password") {
       passwordInput.current.type = "text";
@@ -31,18 +30,13 @@ export default function SingUp() {
       }
     }
   }
-
   return (
     <div className="singup">
-      <form action="" method="post">
-        <h2>Singup</h2>
+      <form action="" method="post" autoComplete="off" autoSave="off">
+        <h2>Login</h2>
         <div>
           <label htmlFor="username">Username</label>
-          <input type="text" id="username" />
-        </div>
-        <div>
-          <label htmlFor="email">Email</label>
-          <input type="email" id="email" />
+          <input type="text" id="login-username" />
         </div>
         <div>
           <label htmlFor="password">Password</label>
@@ -62,17 +56,19 @@ export default function SingUp() {
             </div>
           </div>
         </div>
+
         <div>
-          <label htmlFor="phone">Phone</label>
-          <input type="text" id="phone" />
+          <input className="submit" type="submit" value="Login" />
         </div>
         <div>
-          <input className="submit" type="submit" value="Singup" />
+          <Link className="reset-password" href="">
+            Forgot Password
+          </Link>
         </div>
       </form>
       <div className="space">
         <div className="line"></div>
-        <div className="text">Or Singup With</div>
+        <div className="text">Or Login With</div>
       </div>
       <div className="links">
         <button>
@@ -87,10 +83,10 @@ export default function SingUp() {
       </div>
       <div className="goto-login">
         <p>
-          Already have an account{" "}
+          Don`t have an account?{" "}
           <span>
-            <Link className="link" href="/login">
-              Login
+            <Link className="link" href="/singup">
+              Singup
             </Link>
           </span>
         </p>
