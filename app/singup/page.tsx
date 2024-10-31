@@ -1,6 +1,6 @@
 "use client";
 import React, { useRef, useState } from "react";
-import gsap from "gsap";
+// import gsap from "gsap";
 import axios from "axios";
 import "../styles/SingupAndLogin.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -12,6 +12,7 @@ import {
   faX,
 } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
+// import { useGSAP } from "@gsap/react";
 
 export default function SingUp() {
   const passwordInput = useRef<HTMLInputElement>(null);
@@ -31,6 +32,9 @@ export default function SingUp() {
   const validMsgPhone = useRef<HTMLParagraphElement>(null);
   const validMsgUsername = useRef<HTMLParagraphElement>(null);
   const vaildMsgPassword = useRef<HTMLParagraphElement>(null);
+  // useGSAP(() => {
+  //   gsap.to(messageContainer.current, { y: "50px" });
+  // });
 
   function showAndHidePassword() {
     if (passwordInput.current?.type === "password") {
@@ -81,6 +85,7 @@ export default function SingUp() {
       phoneRegexp.test(phone) &&
       password != ""
     ) {
+      event.preventDefault();
       validMsgUsername.current!.style.display = "none";
       validMsgEmail.current!.style.display = "none";
       validMsgPhone.current!.style.display = "none";
@@ -100,7 +105,6 @@ export default function SingUp() {
             }
           }, 3000);
           setMessageFromServer(response.data.message);
-          gsap.to(messageContainer.current, { y: "50px" });
         })
         .catch((error) => {
           console.log(error);
