@@ -62,10 +62,10 @@ export default function Login() {
             if (messageContainer.current!.style.display == "block") {
               messageContainer.current!.style.display = "none";
             }
-            setTimeout(() => {
-              route.push("/");
-            }, 1000);
           }, 3000);
+          setTimeout(() => {
+            route.push("/");
+          }, 4000);
           setMessageFromServer(response.data.message);
           localStorage.setItem("username", response.data.username);
           localStorage.setItem("login-status", response.data.login);
