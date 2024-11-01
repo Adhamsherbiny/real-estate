@@ -6,6 +6,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHouse } from "@fortawesome/free-solid-svg-icons";
 
 export default function Nav() {
+  const loginStatus = localStorage.getItem("login-status");
+  // const [login, setLogin] = useState(loginStatus);
+  const username = localStorage.getItem("username");
   return (
     <div className="nav">
       <div className="logo">
@@ -22,7 +25,7 @@ export default function Nav() {
         <Link className="link" href="">
           About Us
         </Link>
-        {localStorage.getItem("login-status") != null ? (
+        {loginStatus != null ? (
           <Link
             className="link"
             href=""
@@ -30,7 +33,7 @@ export default function Nav() {
           >
             Logout
           </Link>
-        ) : localStorage.getItem("username") == null ? (
+        ) : username == null ? (
           <Link className="link" href="/singup">
             Singup
           </Link>
