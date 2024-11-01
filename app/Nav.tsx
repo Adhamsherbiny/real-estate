@@ -1,14 +1,17 @@
 "use client";
 import "./styles/nav.scss";
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHouse } from "@fortawesome/free-solid-svg-icons";
 
 export default function Nav() {
   const loginStatus = localStorage.getItem("login-status");
-  // const [login, setLogin] = useState(loginStatus);
   const username = localStorage.getItem("username");
+  const [login, setLogin] = useState(loginStatus);
+  const [user, setUser] = useState(loginStatus);
+  setLogin(loginStatus);
+  setUser(username);
   return (
     <div className="nav">
       <div className="logo">
@@ -25,15 +28,18 @@ export default function Nav() {
         <Link className="link" href="">
           About Us
         </Link>
-        {loginStatus != null ? (
+        {login != null ? (
           <Link
             className="link"
             href=""
-            onClick={() => localStorage.removeItem("login-status")}
+            onClick={() => {
+              localStorage.removeItem("login-status");
+              window.location.reload();
+            }}
           >
             Logout
           </Link>
-        ) : username == null ? (
+        ) : user == null ? (
           <Link className="link" href="/singup">
             Singup
           </Link>
