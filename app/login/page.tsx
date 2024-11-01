@@ -50,7 +50,6 @@ export default function Login() {
       passwordLog != "" &&
       passwordLog != null
     ) {
-      e.preventDefault();
       axios
         .post("https://realestate-server-one.vercel.app/login", {
           usernameLog,
@@ -69,6 +68,7 @@ export default function Login() {
           setMessageFromServer(response.data.message);
           localStorage.setItem("username", response.data.username);
           localStorage.setItem("login-status", response.data.login);
+          e.preventDefault();
         })
         .catch((error) => {
           setMessageFromServer(error.response.data.message);
@@ -132,7 +132,7 @@ export default function Login() {
           <input
             className="submit"
             onClick={sublogin}
-            type="submit"
+            type="button"
             value="Login"
           />
         </div>
