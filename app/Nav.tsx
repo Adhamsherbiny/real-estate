@@ -1,17 +1,20 @@
 "use client";
 import "./styles/nav.scss";
-import React, { useState } from "react";
 import Link from "next/link";
+import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHouse } from "@fortawesome/free-solid-svg-icons";
+import axios from "axios";
 
 export default function Nav() {
-  const loginStatus = localStorage.getItem("login-status");
-  const username = localStorage.getItem("username");
-  const [login, setLogin] = useState(loginStatus);
-  const [user, setUser] = useState(loginStatus);
-  setLogin(loginStatus);
-  setUser(username);
+  const [login, setLogin] = useState();
+  const [user, setUser] = useState();
+  axios
+    .get("https://realestate-server-one.vercel.app/checkLog")
+    .then((response) => {
+      setLogin(response.data.message);
+      setUser(response.data.username);
+    });
   return (
     <div className="nav">
       <div className="logo">
