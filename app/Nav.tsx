@@ -44,7 +44,7 @@ export default function Nav() {
           >
             Logout
           </Link>
-        ) : user == null ? (
+        ) : user != null ? (
           <Link className="link" href="/singup">
             Singup
           </Link>
