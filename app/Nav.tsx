@@ -1,3 +1,4 @@
+"use client";
 import "./styles/nav.scss";
 import React from "react";
 import Link from "next/link";
@@ -21,13 +22,21 @@ export default function Nav() {
         <Link className="link" href="">
           About Us
         </Link>
-        {true ? (
+        {localStorage.getItem("login-status") != null ? (
+          <Link
+            className="link"
+            href=""
+            onClick={() => localStorage.removeItem("login-status")}
+          >
+            Logout
+          </Link>
+        ) : localStorage.getItem("username") == null ? (
           <Link className="link" href="/singup">
             Singup
           </Link>
         ) : (
-          <Link className="link" href="">
-            Profile
+          <Link className="link" href="/login">
+            Login
           </Link>
         )}
       </div>

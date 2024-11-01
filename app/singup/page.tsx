@@ -1,8 +1,8 @@
 "use client";
 import React, { useRef, useState } from "react";
-// import gsap from "gsap";
 import axios from "axios";
 import "../styles/SingupAndLogin.scss";
+import { useRouter } from "next/navigation";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook, faGoogle } from "@fortawesome/free-brands-svg-icons";
 import {
@@ -12,14 +12,29 @@ import {
   faX,
 } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
-// import { useGSAP } from "@gsap/react";
 
+// ? backend server url =======>>>> https://realestate-server-one.vercel.app
+
+/**
+ * SingUp component handles the user registration process.
+ * It manages form inputs for username, email, password, and phone number,
+ * providing real-time validation feedback for each field. The component
+ * also includes functionality to toggle password visibility and displays
+ * server response messages. Upon successful validation, it sends a signup
+ * request to the backend server and navigates to the login page.
+ * // ?sudo service apache2 stop
+ */
 export default function SingUp() {
+  // const productionSingupRoute: string =
+  // "https://realestate-server-one.vercel.app/singup";
+  // const testSingupRoute: string = "http://localhost:5000/singup";
   const passwordInput = useRef<HTMLInputElement>(null);
   const showPassword = useRef<SVGSVGElement>(null);
   const hidePassword = useRef<SVGSVGElement>(null);
   const closeMessage = useRef<SVGSVGElement>(null);
   const messageContainer = useRef<HTMLDivElement>(null);
+  const route = useRouter();
+
   const [username, setUsername] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
@@ -32,9 +47,6 @@ export default function SingUp() {
   const validMsgPhone = useRef<HTMLParagraphElement>(null);
   const validMsgUsername = useRef<HTMLParagraphElement>(null);
   const vaildMsgPassword = useRef<HTMLParagraphElement>(null);
-  // useGSAP(() => {
-  //   gsap.to(messageContainer.current, { y: "50px" });
-  // });
 
   function showAndHidePassword() {
     if (passwordInput.current?.type === "password") {
@@ -103,6 +115,9 @@ export default function SingUp() {
             if (messageContainer.current!.style.display == "block") {
               messageContainer.current!.style.display = "none";
             }
+            setTimeout(() => {
+              route.push("/login");
+            }, 1000);
           }, 3000);
           setMessageFromServer(response.data.message);
         })
