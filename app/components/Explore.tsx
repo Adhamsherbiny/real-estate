@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React from "react";
-import "./styles/explore.scss";
-import cards from "./json/cards.json";
+import "../styles/explore.scss";
+import cards from "../json/cards.json";
 export default function Explore() {
   return (
     <div className="explore-section">

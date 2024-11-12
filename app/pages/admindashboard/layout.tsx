@@ -1,5 +1,5 @@
-import Nav from "../Nav";
 import SideNavAmdin from "./aside";
+import "../../styles/adminDashboard.scss";
 export default function Admin({
   children,
 }: Readonly<{
@@ -7,10 +7,9 @@ export default function Admin({
 }>) {
   return (
     <div className="admin-page">
-      <Nav />
       <div className="section-layout">
         <SideNavAmdin />
-        <div>{children}</div>
+        <div className="div">{children}</div>
       </div>
     </div>
   );

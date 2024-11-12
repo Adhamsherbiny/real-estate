@@ -1,6 +1,6 @@
 "use client";
 import React, { useRef, useState } from "react";
-import "../styles/SingupAndLogin.scss";
+import "../../styles/SingupAndLogin.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook, faGoogle } from "@fortawesome/free-brands-svg-icons";
 import {
@@ -71,7 +71,7 @@ export default function Login() {
           e.preventDefault();
         })
         .catch((error) => {
-          setMessageFromServer(error.response.data.message);
+          setMessageFromServer(error);
         });
     }
   }
@@ -161,7 +161,7 @@ export default function Login() {
         <p>
           Don`t have an account?{" "}
           <span>
-            <Link className="link" href="/singup">
+            <Link className="link" href="/pages/singup">
               Singup
             </Link>
           </span>

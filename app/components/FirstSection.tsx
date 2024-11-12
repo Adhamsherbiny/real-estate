@@ -1,11 +1,11 @@
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
-import "./styles/firstsection.scss";
+import "../styles/firstsection.scss";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import slideImage from "./json/slides.json";
+import slideImage from "../json/slides.json";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCoverflow, Navigation, Pagination } from "swiper/modules";
 import Image from "next/image";

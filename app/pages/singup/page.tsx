@@ -1,7 +1,7 @@
 "use client";
 import React, { useRef, useState } from "react";
 import axios from "axios";
-import "../styles/SingupAndLogin.scss";
+import "../../styles/SingupAndLogin.scss";
 import { useRouter } from "next/navigation";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook, faGoogle } from "@fortawesome/free-brands-svg-icons";
@@ -285,7 +285,7 @@ export default function SingUp() {
         <p>
           Already have an account{" "}
           <span>
-            <Link className="link" href="/login">
+            <Link className="link" href="/pages/login">
               Login
             </Link>
           </span>

@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import "./styles/footer.scss";
+import "../styles/footer.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFacebook,

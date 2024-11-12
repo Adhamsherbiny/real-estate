@@ -1,7 +1,7 @@
-import Explore from "./Explore";
-import FirstSection from "./FirstSection";
-import Footer from "./Footer";
-import Nav from "./Nav";
+import Explore from "@/app/components/Explore";
+import FirstSection from "@/app/components/FirstSection";
+import Footer from "@/app/components/Footer";
+import Nav from "@/app/components/Nav";
 import "./styles/homepage.scss";
 
 export default function Home() {
