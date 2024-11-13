@@ -10,9 +10,9 @@ export default function Createpost() {
   const [adress, setAdress] = useState<any>();
   const [floor, setFloor] = useState<any>();
   const [phone, setPhone] = useState<any>();
-  const [city, setCity] = useState<any>();
+  const [city, setCity] = useState<any>("Futures City");
   const [price, setPrice] = useState<any>();
-  const [type, setType] = useState<any>();
+  const [type, setType] = useState<any>("Sell");
   const [area, setArea] = useState<any>();
   const [rooms, setRooms] = useState<any>();
   const [bathrooms, setBathrooms] = useState<any>();

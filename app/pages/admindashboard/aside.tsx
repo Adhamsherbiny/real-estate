@@ -55,7 +55,10 @@ export default function SideNavAmdin() {
               </Link>
             </li>
             <li>
-              <Link className="menu-link" href={""}>
+              <Link
+                className="menu-link"
+                href={"/pages/admindashboard/routes/showallpost"}
+              >
                 Show All Post
               </Link>
             </li>
