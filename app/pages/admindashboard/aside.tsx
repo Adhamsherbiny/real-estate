@@ -30,7 +30,7 @@ export default function SideNavAmdin() {
   }
   return (
     <div className="aside-nav">
-      <ul>
+      <ul className="aside-container">
         <li>
           <Link onClick={postMenu} href={""} className="menu">
             Post Definition

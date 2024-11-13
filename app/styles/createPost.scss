@@ -5,6 +5,9 @@
     align-items: center;
     form{
         width:100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
         position: relative;
         border: 1px solid royalblue;
         padding: 10px;
@@ -32,6 +35,13 @@
                     justify-content: space-between;
                     align-items: center;
                     margin-bottom: 5px;
+                    .select{
+                        padding: 5px;
+                        border-radius: 4px;
+                        background-color: white;
+                        border: 1px solid silver;
+                        width: 195px;
+                    }
                     input{
                         padding: 5px 8px;
                         border-radius: 4px;
@@ -60,6 +70,49 @@
                     }
                 }
             }
+        }
+        .upload-image{
+            display: flex;
+            flex-direction: column;
+            input.input-file{
+                position: relative;
+                width: 200px;
+                cursor: pointer;
+                color: black;
+                border-radius: 4px;
+                padding: 5px 15px;
+                margin-left: 5px;
+    
+                &::after{
+                    position: absolute;
+                    content: "Choose Image";
+                    color: black;
+                    left: 0px;
+                    top: 0px;
+                    background-color: whitesmoke;
+                    padding: 2px 5px;
+                    width: 90px;
+                    height: 23px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border: 1px solid silver;
+                    border-radius: 4px;
+                }
+            }
+        }
+        
+        .submit{
+            margin-top: 10px;
+            margin-left: 5px;
+            background-color: #00674f;
+            padding: 5px 20px;
+            border: 1px solid #00674f;
+            border-radius: 6px;
+            font-size: 14px;
+            width: 150px;
+            color: white;
+            cursor: pointer;
         }
     }
 }
