@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-expressions */
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
 import "../styles/adminPostWidget.scss";
@@ -7,8 +8,11 @@ import {
   faChartArea,
   faShower,
 } from "@fortawesome/free-solid-svg-icons";
+import axios from "axios";
 
 interface typeOfProps {
+  id?: string;
+  pic?: string;
   type?: string;
   adress?: string;
   floor?: string;
@@ -20,13 +24,23 @@ interface typeOfProps {
 }
 
 export default function AdminPostWidget(props: typeOfProps) {
+  function deletePost() {
+    axios
+      .post("https://realestate-server-one.vercel.app/deletepost", {
+        id: props.id,
+      })
+      .then((response) => {
+        response.data.message;
+      })
+      .catch((error) => console.log(error));
+  }
   return (
     <div className="admin-post-widget">
       <div className="user">
         <div className="pic">
           <div className="type">{props.type}</div>
           <img
-            src="http://localhost:5000/img/pics/imageThree_1731507932176.jpg"
+            src={`https://realestate-server-one.vercel.app/img/pics/${props.pic}`}
             alt=""
           />
         </div>
@@ -60,8 +74,10 @@ export default function AdminPostWidget(props: typeOfProps) {
           </div>
           <div className="call"></div>
           <div className="admin">
-            <button>Delete</button>
-            <button>Edit</button>
+            <button onClick={deletePost} className="del">
+              Delete
+            </button>
+            <button className="edt">Edit</button>
           </div>
         </div>
       </div>

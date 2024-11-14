@@ -55,7 +55,7 @@ export default function Login() {
           usernameLog,
           passwordLog,
         })
-        .then((response) => {
+        .then(async (response) => {
           messageContainer.current!.style.display = "block";
           setTimeout(() => {
             if (messageContainer.current!.style.display == "block") {
@@ -65,9 +65,7 @@ export default function Login() {
           setTimeout(() => {
             route.push("/");
           }, 4000);
-          setMessageFromServer(response.data.message);
-          localStorage.setItem("username", response.data.username);
-          localStorage.setItem("login-status", response.data.login);
+          setMessageFromServer(await response.data.message);
           e.preventDefault();
         })
         .catch((error) => {

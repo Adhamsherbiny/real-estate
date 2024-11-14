@@ -38,7 +38,7 @@ export default function Createpost() {
     formData.append("description", description);
     formData.append("bathrooms", bathrooms);
     axios
-      .post("http://localhost:5000/uploadpost", formData)
+      .post("https://realestate-server-one.vercel.app/uploadpost", formData)
       .then((response) => {
         console.log(response.data.message);
       })

@@ -1,41 +1,71 @@
+.section-layout {
+    display: flex;
+    height: 100vh;
 
-.section-layout{
-        display: flex;
+    .div {
+        width: 100%;
         height: 100vh;
-        .div{
-            width: 100%;
-            height: 100vh;
-        }
+    }
 }
 
 .admin-dashboard-page {
-        width: 1115px;
-        .page{
-            width: 100%;
-            .cards{
-                margin-block: 10px;
-                padding-block: 10px;
+    width: 1115px;
+
+    .admin-log {
+        position: absolute;
+        left: 0;
+        top: 0;
+        background-color: white;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        form {
+            width: 300px;
+            height: 150px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid black;
+            border-radius: 4px;
+            padding: 10px 20px;
+
+            .form-div {
+                width: 90%;
                 display: flex;
-                width: 100%;
-                justify-content: space-evenly;
-                .card{
-                    border: 1px solid #eee;
-                    background-color: #eee;
-                    padding: 10px 20px;
-                    border-radius: 5px;
-                    display: flex;
-                    flex-direction: column;
-                    width: 150px;
+                align-items: center;
+                justify-content: space-between;
+                margin-bottom: 5px;
+
+                input {
+                    border: 1px solid black;
+                    padding: 4px 8px;
+                    border-radius: 4px;
+                }
+
+                label {
+                    font-size: 13px;
                 }
             }
-            .chart{
-                margin-block: 10px;
-                background: url("../../public//assets/images/Represent\ Data\ on\ a\ Bar\ Graph\ _\ Constructing\ Bar\ Graphs\ _\ Horizontal.jpeg");
-                width: 100%;
-                height: 300px;
-                background-position: center;
-                background-repeat: no-repeat;
-                background-size: contain;
+
+            .sub {
+                margin-top: 10px;
+                width: 120px;
+                padding: 5px 20px;
+                background-color: white;
+                border: 1px solid black;
+                border-radius: 10px;
+                cursor: pointer;
+                transition: 0.3s;
+
+                &:hover {
+                    background-color: black;
+                    color: white;
+                }
             }
         }
     }
+}

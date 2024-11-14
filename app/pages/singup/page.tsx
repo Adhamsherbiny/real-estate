@@ -116,7 +116,7 @@ export default function SingUp() {
               messageContainer.current!.style.display = "none";
             }
             setTimeout(() => {
-              route.push("/login");
+              route.push("/pages/login");
             }, 1000);
           }, 3000);
           setMessageFromServer(response.data.message);

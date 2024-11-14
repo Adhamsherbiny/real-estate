@@ -5,6 +5,7 @@
   margin: 10px;
   background-color: white;
   .user {
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -98,12 +99,28 @@
     .admin {
       display: flex;
       align-items: center;
-      justify-content: space-evenly;
+      justify-content: space-between;
+      width: 210px;
+      position: absolute;
+      bottom: 5px;
+      right: 10px;
       button {
         border-radius: 5px;
         padding: 5px 10px;
         border: 1px solid;
         cursor: pointer;
+        width: 100px;
+        font-size: 13px;
+      }
+      .del {
+        background-color: rgb(145, 2, 2);
+        color: white;
+        border-color: rgb(145, 2, 2);
+      }
+      .edt {
+        background-color: indigo;
+        color: white;
+        border-color: indigo;
       }
     }
   }
